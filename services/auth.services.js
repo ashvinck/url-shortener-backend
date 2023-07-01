@@ -64,7 +64,7 @@ export async function resetPasswordById({ userId, password: hashedPassword }) {
       .db('URLshort')
       .collection('UserData')
       .updateOne(
-        { _id: ObjectId(userId) },
+        { _id: new ObjectId(userId) },
         { $set: { password: hashedPassword } }
       );
     return result;
