@@ -52,7 +52,7 @@ export async function getUserIDFromDB(_id) {
     const result = await client
       .db('URLshort')
       .collection('UserData')
-      .findOne({ _id: ObjectId(_id) });
+      .findOne({ _id: new ObjectId(_id) });
     return result;
   } catch (err) {
     console.error(err);
